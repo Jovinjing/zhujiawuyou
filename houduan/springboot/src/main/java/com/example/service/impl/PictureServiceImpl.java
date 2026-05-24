@@ -193,11 +193,11 @@ public uploadPictureDto add(String oldPicture,String newPicture, String modelNam
     return uploadPictureDto;
 }
     public String generatePicture(String url,String params,String modelName) throws ApiException, InterruptedException {
-    LibLib api = new LibLib("p5D4QTZaCFuYtuA9K9SdwQ", "y4U17AKVFI5GdPmGS1KsOzUPOUPCikDt") ;// 填入你自己的key
+    LibLib api = new LibLib("", "") ;// 填入你自己的key
     ImageToImageRequest imageToImageRequest = new ImageToImageRequest();
         ImageToImageRequestGenerateParams imageToImageRequestGenerateParams = chooseModel(params, url, modelName);
         imageToImageRequest.generateParams(imageToImageRequestGenerateParams);
-    imageToImageRequest.templateUuid("63b72710c9574457ba303d9d9b8df8bd");
+    imageToImageRequest.templateUuid("");
     //NOTE(gz): 异步 SDK 调用方法
     SubmitResponse submitResponse = api.submitImageToImage(imageToImageRequest);
     System.out.println(submitResponse);
@@ -215,11 +215,11 @@ public uploadPictureDto add(String oldPicture,String newPicture, String modelNam
     }
 }
     public String generatePartPicture(String pictureUrl,String picturePartUrl,String params,String modelName) throws ApiException, InterruptedException {
-        LibLib api = new LibLib("p5D4QTZaCFuYtuA9K9SdwQ", "y4U17AKVFI5GdPmGS1KsOzUPOUPCikDt") ;// 填入你自己的key
+        LibLib api = new LibLib("", "") ;// 填入你自己的key
         ImageToImageRequest imageToImageRequest = new ImageToImageRequest();
         ImageToImageRequestGenerateParams imageToImageRequestGenerateParams = choosePartModel(params, pictureUrl,picturePartUrl, modelName);
         imageToImageRequest.generateParams(imageToImageRequestGenerateParams);
-        imageToImageRequest.templateUuid("63b72710c9574457ba303d9d9b8df8bd");
+        imageToImageRequest.templateUuid("");
         //NOTE(gz): 异步 SDK 调用方法
         SubmitResponse submitResponse = api.submitImageToImage(imageToImageRequest);
         System.out.println(submitResponse);

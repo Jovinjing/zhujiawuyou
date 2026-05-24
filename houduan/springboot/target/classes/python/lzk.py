@@ -70,18 +70,18 @@ process_image(param1, "output1.png")
 
 
 picurl="output1.png"
-accessKeyId = 'LTAI5tBqztXsBthND9eYwutX'
-accessKeySecret = 'hB0dPoIbglNd6SLpVTyZuYhGiwY13H'
+accessKeyId = ''
+accessKeySecret = ''
 auth = oss2.Auth(accessKeyId, accessKeySecret)
 endpoint = 'oss-cn-guangzhou.aliyuncs.com'
 objectName="blackwhite/"+picurl
 # 填写Bucket名称。# yourBucketName填写存储空间名称。
-bucket = oss2.Bucket(auth, endpoint, 'lzkai')
+bucket = oss2.Bucket(auth, endpoint, '')
 #
 # # 填写网络流地址。
 # input = requests.get(picurl).content
 # 填写Object完整路径。Object完整路径中不能包含Bucket名称。
 bucket.put_object_from_file(objectName, picurl)
-fileLink = 'http://lzkai.'+endpoint+'/'+objectName
+fileLink = 'http://.'+endpoint+'/'+objectName
 print(fileLink)
 os.remove("output1.png")

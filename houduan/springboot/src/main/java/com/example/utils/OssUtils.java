@@ -22,8 +22,8 @@ import java.nio.file.Paths;
 public class OssUtils {
     public static StringBuilder uploadPicture(MultipartFile file,String newOrold) throws IOException {
         String fileName = file.getOriginalFilename();
-        String accesskey="LTAI5tPotYspixKHy5DRnnxc";
-        String accesskeysecret="RTUSdt68MlRRH9zqFQbuxP2wD1IqXR";
+        String accesskey="";
+        String accesskeysecret="";
         // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
         String endpoint = "oss-cn-guangzhou.aliyuncs.com";
         // 填写Bucket名称，例如examplebucket。

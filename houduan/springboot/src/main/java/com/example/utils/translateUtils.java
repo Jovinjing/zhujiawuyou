@@ -14,9 +14,9 @@ public class translateUtils {
         String q = text;
         String from = "zh";
         String to = "en";
-        String appid = "20241121002207969"; // 请替换为你的真实appid
+        String appid = ""; // 请替换为你的真实appid
         String salt = String.valueOf(System.currentTimeMillis()); // 随机盐值
-        String key = "YOg8wxA_8GLopmIcOo_Z"; // 平台分配的密钥
+        String key = ""; // 平台分配的密钥
         // 生成签名
         String sign = generateSign(appid, q, salt, key);
 

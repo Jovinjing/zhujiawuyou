@@ -22,7 +22,7 @@ const load=()=>{
   request({
     method: 'post',
     responseType: 'arraybuffer', // 指定响应类型为blob
-    // url: 'http://1.12.238.137:9090/files/downloadWord',
+    // url: 'lhttp://yourserverurl:9090/files/downloadWord',
     url: '/files/downloadWord',
     data:  {
         provinceName:provinceName.value,

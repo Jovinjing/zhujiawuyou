@@ -37,8 +37,8 @@ class WebControllerTest {
     private PictureService PictureService;
     @Test
     public void hello() throws ApiException, InterruptedException, ClientException, FileNotFoundException {
-        String accesskey="LTAI5tBqztXsBthND9eYwutX";
-        String accesskeysecret="hB0dPoIbglNd6SLpVTyZuYhGiwY13H";
+        String accesskey="";
+        String accesskeysecret="";
         // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
         String endpoint = "oss-cn-guangzhou.aliyuncs.com";
         // 从环境变量中获取访问凭证。运行本代码示例之前，请确保已设置环境变量OSS_ACCESS_KEY_ID和OSS_ACCESS_KEY_SECRET。
@@ -49,7 +49,7 @@ class WebControllerTest {
         String objectName = "oldPicture/1.jpeg";
         // 填写Bucket所在地域。以华东1（杭州）为例，Region填写为cn-hangzhou。
         String region = "cn-guangzhou";
-        String filePath= "https://liblibai-online.liblib.cloud/img/081e9f07d9bd4c2ba090efde163518f9/7c1cc38e-522c-43fe-aca9-07d5420d743e.png";
+        String filePath= "https://liblibai-online.liblib.cloud/img/.png";
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accesskey, accesskeysecret);
 
@@ -79,10 +79,10 @@ class WebControllerTest {
 //        ImageToImageRequest imageToImageRequest = new ImageToImageRequest();
 //        ImageToImageRequestGenerateParams params = new ImageToImageRequestGenerateParams();
 //        params.prompt("cat").imgCount(1).resizedWidth(1024).resizedHeight(1024).denoisingStrength(0.75F).cfgScale(7)
-//                .setSourceImage("https://fc-sd-a2eb516wa.oss-cn-hangzhou.aliyuncs.com/63a0d2a0465ad94400930b22bc6cd86.jpg")
+//                .setSourceImage("https://fc-sd-a2eb516wa.oss-cn-hangzhou.aliyuncs.com/oldPicture/1.jpeg");
 //        ;
 //        imageToImageRequest.generateParams(params);
-//        imageToImageRequest.templateUuid("63b72710c9574457ba303d9d9b8df8bd");
+//        imageToImageRequest.templateUuid(");
 //        //NOTE(gz): 异步 SDK 调用方法
 //        SubmitResponse submitResponse = api.submitImageToImage(imageToImageRequest);
 //        System.out.println(submitResponse);
@@ -104,7 +104,7 @@ class WebControllerTest {
 //        }
 
 //        // API访问密钥
-//        String secretKey = "dWNPUhCI0F48F-_GpLRtF1NcwRBAaESU";
+//        String secretKey = "U";
 //
 //        // 请求API接口的uri地址
 //        String uri = "/api/generate/webui/status";

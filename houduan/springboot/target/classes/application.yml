@@ -2,26 +2,27 @@ server:
   port: 9090
 
 ai:
-  apiKey: "0c83f9963f0a05a9b956650ca7ad12b2.gdxgjndzLA0RpkTH"
+  # TODO: 在生产环境中，请将apiKey替换为您的实际AI服务API密钥
+  # apiKey: "YOUR_AI_API_KEY_HERE"
+  apiKey: "${AI_API_KEY:YOUR_AI_API_KEY_HERE}"
 # 数据库配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #    ai
-    username: root
+    username: ${DB_USERNAME:root}
 #    10.96.187.151
-    password: 123456
-#    url: jdbc:mysql://1.12.238.137:3306/lzk?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
-    url: jdbc:mysql://localhost:3306/lzk?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+    password: ${DB_PASSWORD:YOUR_DATABASE_PASSWORD}
+#    url: jdbc:mysql://:3306/lzk?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+    url: ${DB_URL:jdbc:mysql://localhost:3306/lzk?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true}
   # 支持 swagger3
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   data:
     redis:
-#      host: 1.12.238.137
-      host: localhost
-      port: 6379
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
       timeout: 6000
   servlet:
     multipart:
@@ -36,8 +37,8 @@ mybatis:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
 
-#fileBaseUrl: http://1.12.238.137:${server.port}
-fileBaseUrl: http://localhost:${server.port}
+#fileBaseUrl: http://localhost:${server.port}
+fileBaseUrl: ${FILE_BASE_URL:http://localhost:${server.port}}
 knife4j:
   enable: true
   openapi:
@@ -49,5 +50,8 @@ knife4j:
         api-rule-resources:
           - com.common.controller
 wx:
-  appid: wx2fea85e7745d8e75
-  secret: 84df404233421ee01280948c0f491483
+  # TODO: 在生产环境中，请将appid和secret替换为您的实际微信小程序AppID和AppSecret
+  # appid: YOUR_WECHAT_APPID
+  # secret: YOUR_WECHAT_APP_SECRET
+  appid: ${WX_APPID:YOUR_WECHAT_APPID}
+  secret: ${WX_SECRET:YOUR_WECHAT_APP_SECRET}

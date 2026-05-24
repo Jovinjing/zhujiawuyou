@@ -101,9 +101,9 @@ public class FileController {
     public Result videoByWord(MultipartFile file) throws IOException {
         StringBuilder videourl = OssUtils.uploadPicture(file,"video");
 
-        final String accessKeyId ="LTAI5t5tjo4s9Kr932FcEuzz";
-        final String accessKeySecret = "eSWWAXg8EnwjvZk0qig3K7gq47Xoeq";
-        final String appKey = "wsN6zODyWmdioZJK";
+        final String accessKeyId ="";
+        final String accessKeySecret = "q";
+        final String appKey = "";
         String fileLink = videourl.toString();
         FileTransJavaDemo demo = new FileTransJavaDemo(accessKeyId, accessKeySecret);
         // 第一步：提交录音文件识别请求，获取任务ID用于后续的识别结果轮询。
